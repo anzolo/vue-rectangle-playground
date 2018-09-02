@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import "./assets/normalize.css";
 import RectEditor from "./components/RectEditor.vue";
 
 export default {

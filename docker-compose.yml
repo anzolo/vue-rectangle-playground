@@ -15,3 +15,12 @@ services:
       
   database: # name of the service
     image: mongo # specify image to build container from
+  
+  front:
+    build: ./frontend/
+    ports:
+      - 80:80
+    links:
+      - app
+    depends_on:
+      - app
