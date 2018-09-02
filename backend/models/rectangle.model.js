@@ -1,9 +1,9 @@
 module.exports = function(mongoose){
     return [{
-    x1: {type: Number, required: true},
-    y1: {type: Number, required: true},
-    x2: {type: Number, required: true},
-    y2: {type: Number, required: true},
+    x: {type: Number, required: true},
+    y: {type: Number, required: true},
+    width: {type: Number, required: true},
+    height: {type: Number, required: true},
     color: {type: String}
 }, {
     timestamps: true,

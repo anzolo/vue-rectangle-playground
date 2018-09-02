@@ -1,14 +1,27 @@
 <template>
 <div class="rect-editor">
-    <svg class="svg-canvas">
-        <rect fill="#fc0" width="20" height="20"/>
-        <line stroke="black" x1="0" y1="0" x2="20" y2="20"/>
+    <svg tabindex="0" class="svg-canvas" @click="onCanvasClick" @keyup.delete="onDeletePress">
+        <custom-rect v-for="rect in $store.getters.rectangles" v-bind="rect"/>
     </svg>
 </div>
 </template>
 
 <script>
-export default {};
+import Rect from "./Rect.vue";
+export default {
+  components: {
+    "custom-rect": Rect
+  },
+  computed: {},
+  methods: {
+    onCanvasClick(e) {
+      console.log("canvas click", e);
+    },
+    onDeletePress() {
+      this.$store.dispatch("deleteRect");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
